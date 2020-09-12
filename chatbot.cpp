@@ -11,18 +11,20 @@ int main(){
     //show the time and date
     time_t result = time(NULL);
     m["What is the time?"] = asctime(localtime(&result));
-    
+    string question;
 
     //read Q and a from file to put it to map to make prog faster
     if(tchat.is_open()){
         string q, a;
         while(getline(tchat, q) ){
             getline(tchat, a);
-
+            m[q] = a;
         }
     }
     cout<<"Hi there.\n";
     cout<<"How can i help you? \t";
+    getline(cin, question);
+    
      
     return 0;
 }
