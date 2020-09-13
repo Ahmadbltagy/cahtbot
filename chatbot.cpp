@@ -4,9 +4,21 @@
 #include <ctime>
 using namespace std;
 
+map<string, string> m;
+
+void answer(string q){
+    //this order must run on windows 10 that have bingweather app
+    if(m[q] == "I'll open Weather...")
+        if(!( system("start bingweather:") ) )
+            cout<< m[q] <<endl;
+        else
+            cout<<"You don't have bing weather app\n";
+    else
+        cout<< m[q] <<endl;
+}
+
 int main(){
 
-    map<string, string> m;
     fstream tchat("script.txt");
     //show the time and date
     time_t result = time(NULL);
@@ -21,10 +33,12 @@ int main(){
             m[q] = a;
         }
     }
-    cout<<"Hi there.\n";
-    cout<<"How can i help you? \t";
-    getline(cin, question);
     
-     
+    cout<<"Hi there.";
+    start:
+    cout<<"\nAsk me\n";
+    getline(cin, question);
+    answer(question);
+    goto start;
     return 0;
 }

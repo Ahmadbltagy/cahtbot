@@ -1,1 +1,6 @@
-What is the time?
+Hello
+Hi!
+How are you?
+Great, thanks.
+Open weather
+I'll open Weather...
