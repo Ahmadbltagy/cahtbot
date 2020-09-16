@@ -1,5 +1,7 @@
 Hello
 Hi!
+Hi
+Hi!
 How are you?
 Great, thanks.
 Open weather

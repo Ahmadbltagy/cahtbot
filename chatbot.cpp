@@ -9,12 +9,18 @@ map<string, string> m;
 void answer(string q){
     //this order must run on windows 10 that have bingweather app
     if(m[q] == "I'll open Weather...")
-        if(!( system("start bingweather:") ) )
+        if( !( system("start bingweather:") ) )
             cout<< m[q] <<endl;
         else
-            cout<<"You don't have bing weather app\n";
-    else
+            cout<<"You should have  windows os and download bing weather app\n";
+    else if(m[q]!= "")
         cout<< m[q] <<endl;
+    else
+        cout<< "Sorry, I can't help with that.\n";
+}
+
+void autoCorrect(string q){
+    int count = 0;
 }
 
 int main(){
@@ -25,7 +31,7 @@ int main(){
     m["What is the time?"] = asctime(localtime(&result));
     string question;
 
-    //read Q and a from file to put it to map to make prog faster
+    //read Q and a from file and put it to map to make prog faster
     if(tchat.is_open()){
         string q, a;
         while(getline(tchat, q) ){
@@ -36,7 +42,7 @@ int main(){
     
     cout<<"Hi there.";
     start:
-    cout<<"\nAsk me\n";
+    cout<<"\nAsk me\n\n";
     getline(cin, question);
     answer(question);
     goto start;
